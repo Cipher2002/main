@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import Link from 'next/link'
 
 const timeSlots = [
   "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm"
