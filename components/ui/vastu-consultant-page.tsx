@@ -55,38 +55,38 @@ export default function VastuConsultantPage() {
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen bg-teal-100">
-      <header className="bg-brown-800 p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
+    <div className="flex flex-col min-h-screen bg-cornsilk-100">
+      <header className="bg-darkmoss-100 p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
         <div className="flex items-center space-x-4 text-black">
-          <Phone className="text-black-200" />
-          <span>+91 123456789</span>
+          <Phone className="text-cornsilk-100" />
+          <span className='text-cornsilk-100'>+91 123456789</span>
         </div>
         <img src="/logo.png" alt="Shree Shyam Jyotish Kendra" className="h-12" />
         <div className="flex items-center space-x-4">
           <Link href="/book-appointment">
-            <Button className="bg-yellow-700 hover:bg-yellow-600">BOOK AN APPOINTMENT</Button>
+            <Button className="bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-200">BOOK AN APPOINTMENT</Button>
           </Link>
         </div>
       </header>
 
       <main className="flex-grow">
-        <section className="bg-purple-800 text-white p-12 text-center">
-          <h1 className="text-4xl font-bold mb-6">Vastu Consultant</h1>
+        <section className="bg-pakgreen-100 text-cornsilk-100 p-12 text-center">
+          <h1 className="text-4xl font-bold mb-6">Best Vastu Consultant In India</h1>
           <Link href="/book-appointment">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600">
+            <Button size="lg" className="bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-200">
               CONSULT TODAY
             </Button>
           </Link>
         </section>
 
         <section className="p-12" ref={(el) => { fadeInRef.current[0] = el; }}>
-          <h2 className="text-3xl font-bold mb-6">Services</h2>
+          <h2 className="text-3xl text-darkmoss-100 font-bold mb-6">Services</h2>
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex-1">
-              <p className="mb-4">
+              <p className="text-darkmoss-100 mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime nesciunt atque architecto exercitationem odit eligendi amet laboriosam earum aut assumenda! Consequuntur officia, laudantium exercitationem sed accusantium praesentium est voluptas similique?
               </p>
-              <p>
+              <p className='text-darkmoss-100'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur modi distinctio neque, possimus exercitationem corrupti voluptates obcaecati iste totam officiis. Laudantium perspiciatis nemo adipisci exercitationem vero, esse consectetur voluptas!
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function VastuConsultantPage() {
         </section>
 
         <section className="p-12" ref={(el) => { fadeInRef.current[1] = el; }}>
-          <h2 className="text-3xl font-bold mb-6">Photo Carousel</h2>
+          <h2 className="text-3xl text-darkmoss-100 font-bold mb-6">Photo Carousel</h2>
           <div className="relative">
             <div className="overflow-hidden">
               <div

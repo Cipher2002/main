@@ -82,5 +82,5 @@ body {
 
 /* Initially hide elements */
 section {
-  opacity: 0;
+  opacity: 1;
 }

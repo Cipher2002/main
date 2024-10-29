@@ -50,25 +50,31 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			darkmoss: {
+				100: '#606C38',
+			},
+			pakgreen: {
+				100: '#283618',
+				200: '#D7E6C5',
+			},
+			cornsilk: {
+				100: '#FEFAE0',
+				200: '#F1EABC',
+			},
+			earthyellow: {
+				100: '#DDA15E',
+			},
+			tigerseye: {
+				100: '#BC6C25',
+				200: '#6E4017',
+			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-		teal: {
-		50: '#f0fdfa',
-		100: '#ccfbf1',
-		200: '#99f6e4',
-		300: '#5eead4',
-		400: '#2dd4bf',
-		500: '#14b8a6',
-		600: '#0d9488',
-		700: '#0f766e',
-		800: '#115e59',
-		900: '#134e4a',
-		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

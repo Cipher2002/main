@@ -60,19 +60,19 @@ export default function BookAppointmentPage() {
     const dateRange = eachDayOfInterval({ start: monthStart, end: monthEnd })
 
     return (
-      <div className="bg-white rounded-lg shadow p-8 flex-1">
+      <div className="bg-darkmoss-100 rounded-lg shadow p-8 flex-1">
         <div className="flex justify-between items-center mb-6">
-          <Button onClick={handlePrevMonth} variant="ghost" size="icon" className="text-gray-400 hover:text-gray-600">
-            <ChevronLeft className="h-8 w-8" />
+          <Button onClick={handlePrevMonth} variant="ghost" size="icon" className="text-cornsilk-100 hover:text-pakgreen-100 hover:bg-pakgreen-200">
+            <ChevronLeft className="h-20 w-20" />
           </Button>
-          <h2 className="text-2xl font-semibold text-gray-700">{format(currentDate, 'MMMM yyyy')}</h2>
-          <Button onClick={handleNextMonth} variant="ghost" size="icon" className="text-gray-400 hover:text-gray-600">
-            <ChevronRight className="h-8 w-8" />
+          <h2 className="text-2xl font-semibold text-cornsilk-100">{format(currentDate, 'MMMM yyyy')}</h2>
+          <Button onClick={handleNextMonth} variant="ghost" size="icon" className="text-cornsilk-100 hover:text-pakgreen-100 hover:bg-pakgreen-200">
+            <ChevronRight className="h-20 w-20" />
           </Button>
         </div>
         <div className="grid grid-cols-7 gap-2 text-center">
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-            <div key={day} className="text-lg font-medium text-gray-400 mb-2">{day}</div>
+            <div key={day} className="text-lg font-medium text-cornsilk-100 mb-2">{day}</div>
           ))}
           {dateRange.map((date, i) => (
             <Button
@@ -82,8 +82,8 @@ export default function BookAppointmentPage() {
               size="lg"
               className={`
                 p-2 text-lg rounded-full
-                ${!isSameMonth(date, currentDate) ? 'text-gray-300' : 'text-gray-700'}
-                ${isSameDay(date, selectedDate || new Date()) ? 'bg-teal-500 text-white hover:bg-teal-600' : 'hover:bg-gray-100'}
+                ${!isSameMonth(date, currentDate) ? 'text-cornsilk-100' : 'text-cornsilk-100'}
+                ${isSameDay(date, selectedDate || new Date()) ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-100' : 'hover:bg-pakgreen-200 hover-text-cornsilk-100'}
               `}
             >
               {format(date, 'd')}
@@ -95,8 +95,8 @@ export default function BookAppointmentPage() {
   }
 
   const renderTimeSlots = () => (
-    <div className="bg-white rounded-lg shadow p-6 flex-1">
-      <h3 className="text-xl font-semibold mb-6 text-gray-700">
+    <div className="bg-darkmoss-100 rounded-lg shadow p-6 flex-1">
+      <h3 className="text-xl text-cornsilk-100 font-semibold mb-6">
         {selectedDate ? format(selectedDate, 'EEEE, MMMM d') : 'Select a Time'}
       </h3>
       <div className="space-y-4">
@@ -104,16 +104,15 @@ export default function BookAppointmentPage() {
           <Button
             key={time}
             onClick={() => handleTimeClick(time)}
-            variant="outline"
             className={`
-              w-full justify-between py-3 px-4 rounded-lg border border-gray-200 text-base
-              ${selectedTime === time ? 'bg-teal-500 text-white hover:bg-teal-600' : 'text-gray-700 hover:bg-gray-100'}
+              w-full justify-between py-3 px-4 rounded-lg text-base
+              ${selectedTime === time ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-100' : 'bg-cornsilk-100 text-darkmoss-100 hover:bg-pakgreen-200'}
               ${!selectedDate ? 'opacity-50 cursor-not-allowed' : ''}
             `}
             disabled={!selectedDate}
           >
             <span>{time}</span>
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${selectedTime === time ? 'bg-white text-teal-500' : 'invisible'}`}>
+            <span className={`px-3 py-1 rounded-full text-xs ${selectedTime === time ? 'bg-darkmoss-100 text-cornsilk-100' : 'invisible'}`}>
               Selected
             </span>
           </Button>
@@ -125,21 +124,21 @@ export default function BookAppointmentPage() {
   const renderForm = () => (
     <form onSubmit={handleSubmit} className="space-y-4 mt-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-teal-700">Name</label>
-        <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="border-teal-300 focus:border-teal-500 focus:ring-teal-500" />
+        <label htmlFor="name" className="block text-sm font-medium text-pakgreen-100">Name</label>
+        <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100" />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-teal-700">Email</label>
-        <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="border-teal-300 focus:border-teal-500 focus:ring-teal-500" />
+        <label htmlFor="email" className="block text-sm font-medium text-pakgreen-100">Email</label>
+        <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100" />
       </div>
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-teal-700">Phone</label>
-        <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} required className="border-teal-300 focus:border-teal-500 focus:ring-teal-500" />
+        <label htmlFor="phone" className="block text-sm font-medium text-pakgreen-100">Phone</label>
+        <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} required className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100" />
       </div>
       <div>
-        <label htmlFor="consultationType" className="block text-sm font-medium text-teal-700">Consultation Type</label>
+        <label htmlFor="consultationType" className="block text-sm font-medium text-pakgreen-100">Consultation Type</label>
         <Select name="consultationType" onValueChange={(value) => handleInputChange ({target: { name: 'consultationType', value }} as React.ChangeEvent<HTMLInputElement>)}>
-          <SelectTrigger className="border-teal-300 focus:border-teal-500 focus:ring-teal-500">
+          <SelectTrigger className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100">
             <SelectValue placeholder="Select consultation type" />
           </SelectTrigger>
           <SelectContent>
@@ -150,23 +149,21 @@ export default function BookAppointmentPage() {
         </Select>
       </div>
       <div>
-        <label htmlFor="additionalInfo" className="block text-sm font-medium text-teal-700">Additional Information</label>
-        <Textarea id="additionalInfo" name="additionalInfo" value={formData.additionalInfo} onChange={handleInputChange} className="border-teal-300 focus:border-teal-500 focus:ring-teal-500" />
+        <label htmlFor="additionalInfo" className="block text-sm font-medium text-pakgreen-100">Additional Information</label>
+        <Textarea id="additionalInfo" name="additionalInfo" value={formData.additionalInfo} onChange={handleInputChange} className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100" />
       </div>
-      <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white">Book Consultation</Button>
+      <Button type="submit" className="w-full bg-tigerseye-100 hover:bg-tigerseye-200 text-cornsilk-100">Book Consultation</Button>
     </form>
   )
 
   return (
-    <div className="flex flex-col min-h-screen bg-teal-50">
-      <header className="bg-white p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
-        <Link href="/">
-          <img src="/placeholder.svg?height=48&width=48" alt="Shree Shyam Jyotish Kendra" className="h-12" />
-        </Link>
+    <div className="flex flex-col min-h-screen bg-cornsilk-100">
+      <header className="bg-pakgreen-100 p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
+        <img src="/logo.png" alt="Shree Shyam Jyotish Kendra" className="h-12" />
       </header>
 
       <main className="flex-grow p-8">
-        <h1 className="text-3xl font-bold mb-8 text-teal-800">Book an Online Consultation</h1>
+        <h1 className="text-3xl font-bold mb-8 text-pakgreen-100">Book an Online Consultation</h1>
         {step === 1 && (
           <div className="flex flex-col items-center">
             <div className="flex flex-col lg:flex-row gap-8 p-8 rounded-xl max-w-7xl mx-auto">
@@ -174,18 +171,18 @@ export default function BookAppointmentPage() {
               {renderTimeSlots()}
             </div>
             {selectedDate && selectedTime && (
-              <Button onClick={() => setStep(2)} className="mt-8 bg-teal-500 hover:bg-teal-600 text-white text-lg py-3 px-6">Next</Button>
+              <Button onClick={() => setStep(2)} className="mt-8 bg-tigerseye-100 hover:bg-tigerseye-200 hover:text-cornsilk-100 text-cornsilk-100 text-lg py-3 px-6">Next</Button>
             )}
           </div>
         )}
         {step === 2 && (
           <div className="max-w-2xl mx-auto">
             <div className="mb-6">
-              <h2 className="text-2xl font-semibold text-teal-700">Selected Date and Time:</h2>
-              <p className="text-teal-600 text-lg">{selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}</p>
+              <h2 className="text-2xl font-semibold text-pakgreen-100">Selected Date and Time:</h2>
+              <p className="text-pakgreen-100 text-xl">{selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}</p>
             </div>
             {renderForm()}
-            <Button onClick={() => setStep(1)} variant="outline" className="mt-6 text-teal-600 border-teal-300 hover:bg-teal-50">Back</Button>
+            <Button onClick={() => setStep(1)} className="mt-8 bg-tigerseye-100 hover:bg-tigerseye-200 hover:text-cornsilk-100 text-cornsilk-100 text-lg">Back</Button>
           </div>
         )}
       </main>
