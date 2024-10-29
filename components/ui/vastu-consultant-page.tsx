@@ -10,7 +10,7 @@ export default function VastuConsultantPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/8368532837", "_blank")
+    window.open("https://wa.me/+918368532837", "_blank")
   }
 
   const carouselImages = [
@@ -61,10 +61,10 @@ export default function VastuConsultantPage() {
           <Phone className="text-cornsilk-100" />
           <span className='text-cornsilk-100'>+91 123456789</span>
         </div>
-        <img src="/logo.png" alt="Shree Shyam Jyotish Kendra" className="h-12" />
+        <img src="/logo.png" alt="" className="h-20" />
         <div className="flex items-center space-x-4">
           <Link href="/book-appointment">
-            <Button className="bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-200">BOOK AN APPOINTMENT</Button>
+            <Button className="bg-tigerseye-100 text-cornsilk-100 hover:bg-earthyellow-100 hover:text-pakgreen-100">BOOK AN APPOINTMENT</Button>
           </Link>
         </div>
       </header>
@@ -73,7 +73,7 @@ export default function VastuConsultantPage() {
         <section className="bg-pakgreen-100 text-cornsilk-100 p-12 text-center">
           <h1 className="text-4xl font-bold mb-6">Best Vastu Consultant In India</h1>
           <Link href="/book-appointment">
-            <Button size="lg" className="bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-200">
+            <Button size="lg" className="bg-tigerseye-100 text-cornsilk-100 hover:bg-earthyellow-100 hover:text-pakgreen-100">
               CONSULT TODAY
             </Button>
           </Link>

@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay } from "date-fns"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Phone, ChevronLeft, ChevronRight } from "lucide-react"
+import Link from 'next/link'
 
 const timeSlots = [
   "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm"
@@ -82,7 +83,7 @@ export default function BookAppointmentPage() {
               className={`
                 p-2 text-lg rounded-full
                 ${!isSameMonth(date, currentDate) ? 'text-cornsilk-100' : 'text-cornsilk-100'}
-                ${isSameDay(date, selectedDate || new Date()) ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-100' : 'hover:bg-pakgreen-200 hover-text-cornsilk-100'}
+                ${isSameDay(date, selectedDate || new Date()) ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-earthyellow-100 hover:text-pakgreen-100' : 'hover:bg-pakgreen-200 hover-text-cornsilk-100'}
               `}
             >
               {format(date, 'd')}
@@ -105,7 +106,7 @@ export default function BookAppointmentPage() {
             onClick={() => handleTimeClick(time)}
             className={`
               w-full justify-between py-3 px-4 rounded-lg text-base
-              ${selectedTime === time ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-tigerseye-100' : 'bg-cornsilk-100 text-darkmoss-100 hover:bg-pakgreen-200'}
+              ${selectedTime === time ? 'bg-tigerseye-100 text-cornsilk-100 hover:bg-earthyellow-100 hover:text-pakgreen-100' : 'bg-cornsilk-100 text-darkmoss-100 hover:bg-pakgreen-200'}
               ${!selectedDate ? 'opacity-50 cursor-not-allowed' : ''}
             `}
             disabled={!selectedDate}
@@ -151,15 +152,27 @@ export default function BookAppointmentPage() {
         <label htmlFor="additionalInfo" className="block text-sm font-medium text-pakgreen-100">Additional Information</label>
         <Textarea id="additionalInfo" name="additionalInfo" value={formData.additionalInfo} onChange={handleInputChange} className="border-pakgreen-100 focus:border-pakgreen-200 focus:ring-pakgreen-100" />
       </div>
-      <Button type="submit" className="w-full bg-tigerseye-100 hover:bg-tigerseye-200 text-cornsilk-100">Book Consultation</Button>
+      <Button type="submit" className="w-full bg-tigerseye-100 hover:bg-earthyellow-100 hover:text-pakgreen-100 text-cornsilk-100">Book Consultation</Button>
     </form>
   )
 
   return (
     <div className="flex flex-col min-h-screen bg-cornsilk-100">
-      <header className="bg-pakgreen-100 p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
-        <img src="/logo.png" alt="Shree Shyam Jyotish Kendra" className="h-12" />
+      <header className="bg-darkmoss-100 p-4 flex justify-between items-center sticky top-0 z-10 shadow-md">
+        <div className="flex items-center space-x-4 text-black">
+          <Phone className="text-cornsilk-100" />
+          <span className='text-cornsilk-100'>+91 123456789</span>
+        </div>
+        <Link href='/'>
+        <img src="/logo.png" alt="" className="h-20" />
+        </Link>
+        <div className="flex items-center space-x-4">
+          <Link href="/">
+          <Button className="bg-tigerseye-100 text-cornsilk-100 hover:bg-earthyellow-100 hover:text-pakgreen-100">GO BACK</Button>
+          </Link>
+        </div>
       </header>
+
 
       <main className="flex-grow p-8">
         <h1 className="text-3xl font-bold mb-8 text-pakgreen-100">Book an Online Consultation</h1>
@@ -170,7 +183,7 @@ export default function BookAppointmentPage() {
               {renderTimeSlots()}
             </div>
             {selectedDate && selectedTime && (
-              <Button onClick={() => setStep(2)} className="mt-8 bg-tigerseye-100 hover:bg-tigerseye-200 hover:text-cornsilk-100 text-cornsilk-100 text-lg py-3 px-6">Next</Button>
+              <Button onClick={() => setStep(2)} className="mt-8 bg-tigerseye-100 hover:bg-earthyellow-100 hover:text-pakgreen-100 text-cornsilk-100 text-lg py-3 px-6">Next</Button>
             )}
           </div>
         )}
@@ -181,7 +194,7 @@ export default function BookAppointmentPage() {
               <p className="text-pakgreen-100 text-xl">{selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}</p>
             </div>
             {renderForm()}
-            <Button onClick={() => setStep(1)} className="mt-8 bg-tigerseye-100 hover:bg-tigerseye-200 hover:text-cornsilk-100 text-cornsilk-100 text-lg">Back</Button>
+            <Button onClick={() => setStep(1)} className="mt-8 bg-tigerseye-100 hover:bg-earthyellow-100 hover:text-pakgreen-100 text-cornsilk-100 text-lg">Back</Button>
           </div>
         )}
       </main>
