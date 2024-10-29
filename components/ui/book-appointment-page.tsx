@@ -138,7 +138,7 @@ export default function BookAppointmentPage() {
       </div>
       <div>
         <label htmlFor="consultationType" className="block text-sm font-medium text-teal-700">Consultation Type</label>
-        <Select name="consultationType" onValueChange={(value) => handleInputChange({ target: { name: 'consultationType', value } } as any)}>
+        <Select name="consultationType" onValueChange={(value) => handleInputChange ({target: { name: 'consultationType', value }} as React.ChangeEvent<HTMLInputElement>)}>
           <SelectTrigger className="border-teal-300 focus:border-teal-500 focus:ring-teal-500">
             <SelectValue placeholder="Select consultation type" />
           </SelectTrigger>

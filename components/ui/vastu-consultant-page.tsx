@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Phone, Search, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Phone, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "./button"
 import Link from 'next/link'
 import WhatsAppIcon from "./WhatsAppIcon"
